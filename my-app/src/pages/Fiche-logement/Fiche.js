@@ -1,7 +1,7 @@
 import React from "react";
 import "./Fiche.css";
 import { useParams, Navigate } from "react-router-dom";
-import ListeLogements from "../../assets/api/logements.json";
+import ListeLogements from "../../Data/logements.json";
 import Carrousel from "../../components/Carrousel/Carrousel";
 import Tag from "../../components/Tag/Tag";
 import Etoile from "../../assets/img/Pages/Fiche-logement/Etoile.png";
@@ -88,6 +88,11 @@ function Logement() {
               description={ficheLogement?.description}
             />
             <Dropdown titre="Équipements" description={equipementsLogement} />
+            <Dropdown titre="Équipements">
+              {ficheLogement?.equipments.map((equipment, index) => {
+                <li key={index}>{equipment}</li>;
+              })}
+            </Dropdown>
           </div>
         </div>
       ) : (

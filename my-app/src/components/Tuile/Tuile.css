@@ -1,7 +1,7 @@
 .tuile {
   border-radius: 10px;
   height: 100%;
-  width: 30%;
+  width: 100%;
   min-height: 340px;
   position: relative;
 }
