@@ -83,15 +83,17 @@ function Logement() {
             </div>
           </div>
           <div className="description-equipements">
-            <Dropdown
-              titre="Description"
-              description={ficheLogement?.description}
-            />
-            <Dropdown titre="Équipements" description={equipementsLogement} />
+            <Dropdown titre="Description">
+              <p>{ficheLogement?.description}</p>
+            </Dropdown>
+            {/* <Dropdown titre="Équipements" description={equipementsLogement} /> */}
+
             <Dropdown titre="Équipements">
-              {ficheLogement?.equipments.map((equipment, index) => {
-                <li key={index}>{equipment}</li>;
-              })}
+              <ul>
+                {ficheLogement?.equipments.map((equipment, index) => {
+                  return <li key={index}>{equipment}</li>;
+                })}
+              </ul>
             </Dropdown>
           </div>
         </div>
